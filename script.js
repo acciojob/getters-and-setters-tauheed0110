@@ -1,31 +1,35 @@
-//complete this code
-class Person{
-    constructor(name, age){
-        this.name = name;
-        this.setage(age);
+class Person {
+    constructor(name, age) {
+        this._name = name; // Private property for name
+        this._age = age;   // Private property for age
     }
-    // create getters and setters
-    getname(){
-        return this.name;
+
+    // Getter for name
+    get name() {
+        return this._name;
     }
-    setage(age){
-        this.age = age;
+
+    // Setter for age
+    set age(age) {
+        this._age = age;
+    }
+
+    // Getter for age (optional, if you want to access age)
+    get age() {
+        return this._age;
     }
 }
 
-class Student extends Person{
-    constructor(name, age){
-        super(name, age);
-    }
-    study(){
+// Define the Student class that extends Person
+class Student extends Person {
+    study() {
         console.log(`${this.name} is studying`);
     }
 }
-class Teacher extends Person{
-    constructor(name, age){
-        super(name, age);
-    }
-    teach(){
+
+// Define the Teacher class that extends Person
+class Teacher extends Person {
+    teach() {
         console.log(`${this.name} is teaching`);
     }
 }
